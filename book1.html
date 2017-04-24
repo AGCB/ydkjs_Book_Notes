@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="styles.css">
+    <title>YDKJS Book1</title>
+</head>
+
+<body>
+    <h1>YDKJS Book One</h1>
+    <script>
+        //-----------------------------------------------------------------------------
+        //-----------------------------------------------------------------------------
+        //-----------------------------------------------------------------------------
+        //-----------------------------------------------------------------------------
+        //-----------------------------------------------------------------------------
+        //-----------------------------------------------------------------------------
+        //-----------------------------------------------------------------------------
+        //-----------------------------------------------------------------------------
+        //-----------------------------------------------------------------------------
+        //-----------------------------------------------------------------------------
+        //-----------------------------------------------------------------------------
+        // uncomment the following iife to run part1 review in the console.
+        // (function() {
+        //     'use strict';
+        //     console.log('The book is split into 3');
+        //     console.log('Into Programming, Into Javascript, and into YDKJS');
+        //     console.log('Part 1, INTO PROGRAMMING Review on Page 26');
+        //     console.log('We are running a function that shows all of the concepts of..');
+        //     console.log('Expressions, Operators, Values/types ,comments, variables, blocks, conditionals, loops, functions');
+        //     console.log('I present to you PHONE BUY BUY BONANZA!!!');
+        //     /*
+        //     PHONE BUY BUY BONANZA AKA PBBB is a program to show interactions between a customer
+        //     and a phone salesman.
+        //     We need to know certain things.
+        //     How much does the customer have in his bank account?
+        //     how much do the phones cost?
+        //     what is the tax percentage?
+        //     Are there any accessories that are also purchased and if so, how much do they cost?
+        //     With that information, we can conduct a purchase.
+        //     In this case, we are assuming that the customer is going to continue buying
+        //       phones as long as he has the money to. We will keep updating his bankAccount
+        //     When the customer has purchased all of the phones that they can, we are going to
+        //       console.log 2 sentences. We report how many phones end up being owned by the customer
+        //       and exactly how much the customer spent in the shop.
+        //
+        //      */
+        //     var bankAccount = 52800; // this and the next 3 variables can be tweaked...
+        //     var phonePrice = 100; //...and re-run to confirm it works.
+        //     var taxRate = .08; //...I do it in chrome&ff dev tools on this file
+        //     var accesoryPrice = 25; //
+        //     var fullPrice = ((phonePrice + accesoryPrice) * taxRate) + (phonePrice + accesoryPrice);
+        //     var ownedPhones = 0;
+        //
+        //     function pBBB() {
+        //         if (bankAccount > fullPrice) /* pretty desperate for this phone huh??*/ {
+        //             bankAccount = bankAccount - fullPrice; // subtract money from Bank account for the phone purchase
+        //             ownedPhones++;
+        //             pBBB();
+        //         } else /* at this point the customer has run out of money*/ {
+        //             console.log('The actor purchased ', ownedPhones, 'phones!');
+        //             console.log('They cost the user $', ownedPhones * fullPrice);
+        //             console.log('pBBB fin. Section 1 complete');
+        //         }
+        //
+        //     }
+        //     pBBB();
+        // }());
+        //
+        // console.log('----------------------------------------------------------------');
+        // console.log('----------------------------------------------------------------');
+        // console.log('----------------------------------------------------------------');
+        //-----------------------------------------------------------------------------
+        //-----------------------------------------------------------------------------
+        //-----------------------------------------------------------------------------
+        //-----------------------------------------------------------------------------
+        //-----------------------------------------------------------------------------
+        //-----------------------------------------------------------------------------
+        //-----------------------------------------------------------------------------
+        //-----------------------------------------------------------------------------
+        //-----------------------------------------------------------------------------
+
+        /*
+        Now we have Part 2. Into Javascript.
+        I will have everything commented out
+        any section that you want to see run in a
+        console will have to be "uncommented"
+        Atom Text Editor and Sublime have the
+        control / hotkey for ease after Control L
+        selects the entire line of interest.
+
+        2A Values and types
+          2A0
+          2A1 OBJECTS
+          2A2 ARRAYS
+          2A3 FUNCTIONS
+          2A4 BUILT-IN TYPE METHODS
+          2A5 COMPARING VALUES;
+            2A5A COERSION
+            2A5B TRUTHY & FALSY
+            2A5C EQUALITY
+            2A5D INEQUALITY
+        2B VARIABLES
+          2B1 FUNCTION SCOPES
+          2B2 HOISTING
+          2B3 NESTED SCOPES
+        2C CONDITIONALS
+        2D Strict Mode
+        2E Functions as Values
+          2E1 IIFE's
+          2E2 CLOSURE
+          2E3 MODULES
+        2F this identifier
+        2G prototypes
+        2H Old and New
+          2H1 POLYFILLING
+          2H2 TRANSPILING
+        2I Non Javascript
+        2J Review
+
+        We started with programming basics. Now Kyle is walking us into things that
+        are specific to Javascript.
+
+        2A
+        The 7 types we can access with ...typeof variableName
+        strings, booleans, null, undefined, object, symbols, numbers
+
+        remember that when we use "typeof variableName", we aren't really
+        asking what the type of the variable is.. we are asking what they
+        type of the VALUE INSIDE is. the variable is just our container.
+        also.. when i say ... typeof variableName.... you can also do typeof(variableName)
+        type of always returns output as a string in ""
+
+        typeof null //object...Kyle Red Scorpion on that tip.
+
+        var a;
+        var a = undefined;
+        That's two ways of doing the exact same thing.
+
+        OBJECTS.
+        Bracket vs Dot Notation.
+        Dot won the war. It is easier to read.
+        */
+        // (function() {
+        //   'use strict';
+        //   var object1 = {
+        //       a: 'hellworl',
+        //       b: 42,
+        //       c: false,
+        //   };
+        //   console.log('Part 2, INTO JAVASCRIPT');
+        //   console.log('');
+        //   console.log('');
+        //   console.log('Dot notation is the way we say', object1.a);
+        //   console.log('..but we can also use brackets', object1["b"]);
+        //   console.log("---------  ----- ---- - - - ---- -");
+        //
+        //
+        // }());
+
+
+        /* Page 33. He points out that arrays are objects. You use them when
+            numerically positioned values are what you want. Otherwise, just use
+            objects.*/
+
+        /* Page 34. Built in type methods. His examples are...
+         var z = "zombie";
+         var b = 99.99999;
+         z.length;  // 6.. the actual number of letters in 'zombie'
+         z.toUpperCase(); // "ZOMBIE"
+         b.toFixed(2) // "99.99"
+         Number(b.toFixed(2)) // 99.99 my way of turning it into a usable number.
+
+          So there is a String wrapper that is doing the magic of toUpperCase.
+          It defines a method in it's prototype.. and because z is a string,
+          it inherits from String.
+
+         */
+        // (function() {
+        //     'use strict';
+        //     // this function is to show hoisting. notice that foo(); is called
+        //     // before it is declared.
+        //     // getify's scorpion here is telling us that relying on variable hoisting
+        //     // is confusing and a bad idea. But hoisting function declarations is a common
+        //     // thing people do in code lately...
+        //     // Personally this seems silly. For now I would rather define my functions,
+        //     // then call them. That seems to make more sense to me.
+        //     var a = 12;
+        //     foo();
+        //
+        //     function foo() {
+        //         a = 3;
+        //         console.log('The A variable declaration gets hoisted', a);
+        //         console.log('And fyi, this only worked because...');
+        //         console.log(' the line VAR A got moved magically above the A = 3 when the code is run.');
+        //         var a;
+        //     }
+        //     console.log('', a);
+        // }());
+        //console.log(tye);
+        //---------------
+        //---------------
+        //CONDITIONALS
+        /*
+        The else if statements get replaced by the Switch Statement.
+        if (a = 2) {do this stuff}
+        else if (a = 10) {do this instead}
+        else if (a = 42) {do this instead}
+        else {fall back here}
+
+        (function() {
+          'use strict';
+          //my third switch statement.
+          var answer = 44;
+          switch(answer) {
+            case(42):
+            console.log('corrent');
+            break;
+            case(43):
+            console.log('bad');
+            break;
+            default:
+            console.log('never');
+          }
+        }());
+
+        Then there is the conditional operator. the Ternary operator.
+        is this true ()?..then do this: else do this.
+        ()?:
+        var b = (a > 42)? "hello":"world"
+        if a is bigger than 42, then the variable b responds with hello
+        else it responds with world
+        //---------------
+        //---------------
+        //STRICT MODE
+        "use strict"
+        you can put it inside functions or at a global level.
+        Old Browsers just ignore the statement.
+        1 thing it wont let you do is...
+        a = 12;
+        without a line beforehand like...
+        var a;
+        again this is silly to me like on line133 where I pointed out that
+        I would never naturally do something like this.
+        follow up questions for later...
+        1-What exactly does strict mode change? ( i only know the thing about
+            declaring variables.)
+            1A-Going through the MDN page i see that one law it enforces is,...
+            NO GLOBAL VARIABLES
+            2A-Also, assigntments that would normally silently fail, instead throw exceptions.
+            3A- You get a thrown exception if you try to delete an undeletable property.
+            4A- it blocks you from using eval.
+            5A- it blocks with statements
+            well lets stop there..
+            http://stackoverflow.com/questions/8651415/what-is-strict-mode-and-how-is-it-used
+            http://es5.github.io/#C
+
+        2-What are the situations where I should use this inside of an iife
+           instead of using es6 module pattern?
+
+           //---------------
+           //---------------
+           //FUNCTIONS AS VALUES
+        so we have the function definitions.
+        function functionName (arguments) {
+        code
+        }
+        Functions as first class values.
+        named functions preferable to anonymous functions.
+        iife.. immediately invoked function expression
+        (function(argument) {
+        'use strict';
+        //code
+        }());
+        that syntax is also available on Atom with "iife" enter.
+
+        */
+        // (function() {
+        //   'use strict';
+        //
+        // }());
+        //---------------
+        //---------------
+        //CLOSURE
+        //I'm imagining Matryoshka dolls..
+        /* There are 3 scope chains...
+              1-The global variables.
+              2- The variables in it's own curly brackets
+              3- the variables of the scope directly outside of itself.
+              ** an interesting note here is that when I try this myself, I find that
+              it's not just DIRECTLY OUTSIDE.... the below example I have
+              shows that it functions will have access to every variable even if itself
+              several "do0ll" layers outside.
+
+        */
+        // (function() {
+        //     'use strict';
+        //     //this example has an outside/inner/inner2 function.
+        //     // this is interesting that I define x in the outside function, yet
+        //     // inner2 and inner both can call x as they please.
+        //
+        //     // I even went one step further and nested 3 deep... All of them can
+        //     // access the x variable that was defined in the outside() function
+        //     function outside() {
+        //         var x = 99;
+        //
+        //         function inner() {
+        //             console.log(x, "innner")
+        //
+        //             function inner2() {
+        //                 console.log(x, "inner2");
+        //
+        //                 function inner3() {
+        //                     console.log(x, "inner3");
+        //                 }
+        //                 inner3();
+        //             }
+        //             inner2();
+        //         }
+        //         inner();
+        //     }
+        //     outside();
+        // }());
+        //
+        // 2E3 MODULES
+        /*
+          The most common closures are through the module pattern.
+          Modules let you define private stuff and a publicAPI.
+          Kyle's example in this book is...
+
+          A strange thing here is the User function having a doLogin function
+          inside that can be called even after User() has been called.
+          At the bottom here I call it for 3 different users.
+
+        */
+        // console.log('Here is the simple module pattern');
+        // console.log('its the simplest closure ');
+
+        function User() {
+            var username, password;
+
+            function doLogin(user, pw) {
+                username = user;
+                password = pw;
+                //do the rest
+            }
+            var publicAPI = {
+                login: doLogin
+            };
+            return publicAPI;
+        }
+        //create a User module Instance
+        var fred = User();
+        fred.login = ("fred", "1245dB");
+
+        var barney = User();
+        barney.login = ("barney", "12s45B");
+
+        var torny = User();
+        torny.login = ("torny", "12f45B");
+
+        console.log('----------------------------------------------------------------');
+        console.log('----------------------------------------------------------------');
+        console.log('----------------------------------------------------------------');
+
+        console.log('now we deal with THIS');
+        /*
+        2F
+        THIS keyword... It's hard to talk about "this"...
+        Here is where I've left off on the book as of
+        4/24/17
+        */
+
+
+        //-----------------------------------------------------------------------------
+        /*
+         */
+        //-----------------------------------------------------------------------------
+        //-----------------------------------------------------------------------------
+    </script>
+</body>
+
+</html>
